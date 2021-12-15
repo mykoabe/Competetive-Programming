@@ -15,6 +15,7 @@ class Solution(object):
                 result.append("Fizz")
             else:
                 result.append(str(i))
+
         return result
 solution = Solution();
 print(solution.fizzBuzz(15))
