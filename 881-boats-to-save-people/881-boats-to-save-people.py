@@ -4,6 +4,7 @@ class Solution:
         i=0
         j=len(people)-1
         count=0
+        
         while i<=j:
             if sortedPeople[i]+sortedPeople[j]<=limit:
                 count+=1
