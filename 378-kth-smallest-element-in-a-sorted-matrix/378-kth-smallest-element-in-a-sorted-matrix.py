@@ -10,6 +10,7 @@ class Solution:
                 
         while heap and k > 1: # O(k)
             heapq.heappop(heap) # O(logk)
-            k-=1            
+            k-=1 
+        
         return heap[0]
        
