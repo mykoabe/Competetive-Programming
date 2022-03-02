@@ -11,11 +11,11 @@ class Solution(object):
         def helper(node):
             if(node==None):
                 return 0
+            
             else:
-                m=0
+                maximum=0
                 for i in node.children:
-                    m=max(m,helper(i))
-                return 1+m
-        
+                    maximum = max(maximum,helper(i))
+                return 1+maximum
         return helper(root) 
             
