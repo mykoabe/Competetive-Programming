@@ -8,14 +8,14 @@ class Node:
 
 class Solution(object):
     def maxDepth(self, root):
-        def fun(node):
+        def helper(node):
             if(node==None):
                 return 0
             else:
                 m=0
                 for i in node.children:
-                    m=max(m,fun(i))
+                    m=max(m,helper(i))
                 return 1+m
         
-        return fun(root) 
+        return helper(root) 
             
