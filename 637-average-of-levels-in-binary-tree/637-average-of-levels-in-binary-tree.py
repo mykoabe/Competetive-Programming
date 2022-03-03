@@ -7,18 +7,24 @@
 from queue import Queue
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
-        q  = deque([root])
-        average = []
-        while q:
-            step_sum = 0
-            size = len(q)
-            for i in range(size):
-                current = q.popleft()
-                step_sum += current.val
-                if current.left:
-                    q.append(current.left)
-                if current.right:
-                    q.append(current.right)
-            average.append((step_sum / size) + (10 ** (-5)))
-        return average
+        if not root:
+            return
+        
+        queue = deque([root])
+        result = []
+        
+        while queue:
+            cur_level_sum = 0
+            lenn = len(queue)
+            for i in range(lenn):
+                node = queue.popleft()
+                cur_level_sum += node.val
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            #print(cur_level_sum)
+            result.append(float(cur_level_sum) / lenn)
+        
+        return result
                 
