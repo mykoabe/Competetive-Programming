@@ -1,7 +1,5 @@
 import collections
 from typing import List
-
-
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         
@@ -23,11 +21,13 @@ class Solution:
             path.append(i)
             for c in graph[i]:
                 indegree[c] -= 1
-               
                 if indegree[c] == 0:
-                    q.append(c)
-                         
+                    q.append(c)   
         return path if len(path) == numCourses else []
+
+
+        
+
 
     
         
